@@ -160,6 +160,6 @@ rm -rfv %{buildroot}/usr/lib/python3*/site-packages/subunit
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Subunit.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Subunit/Diff.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/Subunit/.packlist
+/usr/lib/perl5/vendor_perl/5.34.0/Subunit.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Subunit/Diff.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Subunit/.packlist
