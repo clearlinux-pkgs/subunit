@@ -4,7 +4,7 @@
 #
 Name     : subunit
 Version  : 1.4.0
-Release  : 76
+Release  : 77
 URL      : https://github.com/testing-cabal/subunit/archive/1.4.0/subunit-1.4.0.tar.gz
 Source0  : https://github.com/testing-cabal/subunit/archive/1.4.0/subunit-1.4.0.tar.gz
 Summary  : Subunit test protocol library.
@@ -15,15 +15,9 @@ Requires: subunit-lib = %{version}-%{release}
 Requires: subunit-license = %{version}-%{release}
 Requires: subunit-perl = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : extras
-BuildRequires : iso8601
 BuildRequires : pkgconfig(check)
 BuildRequires : pkgconfig(cppunit)
-BuildRequires : testrepository
-BuildRequires : testresources
-BuildRequires : testscenarios
-BuildRequires : testtools
-BuildRequires : traceback2
+BuildRequires : pypi(iso8601)
 
 %description
 #  subunit shell bindings.
@@ -94,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621715711
+export SOURCE_DATE_EPOCH=1641855588
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -104,27 +98,27 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  INSTALLDIRS=vendor
 
 %install
-export SOURCE_DATE_EPOCH=1621715711
+export SOURCE_DATE_EPOCH=1641855588
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/subunit
 cp %{_builddir}/subunit-1.4.0/Apache-2.0 %{buildroot}/usr/share/package-licenses/subunit/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 cp %{_builddir}/subunit-1.4.0/python/iso8601/LICENSE %{buildroot}/usr/share/package-licenses/subunit/e7da7157e8398cab6dffd7f689d3f1dc7676f871
 %make_install
 ## Remove excluded files
-rm -f %{buildroot}/usr/lib/perl5/5.20.0/x86_64-linux/perllocal.pod
-rm -f %{buildroot}/usr/bin/subunit-1to2
-rm -f %{buildroot}/usr/bin/subunit2csv
-rm -f %{buildroot}/usr/bin/subunit2gtk
-rm -f %{buildroot}/usr/bin/subunit2junitxml
-rm -f %{buildroot}/usr/bin/subunit2pyunit
-rm -f %{buildroot}/usr/bin/subunit-2to1
-rm -f %{buildroot}/usr/bin/subunit-filter
-rm -f %{buildroot}/usr/bin/subunit-ls
-rm -f %{buildroot}/usr/bin/subunit-notify
-rm -f %{buildroot}/usr/bin/subunit-output
-rm -f %{buildroot}/usr/bin/subunit-stats
-rm -f %{buildroot}/usr/bin/subunit-tags
-rm -f %{buildroot}/usr/bin/tap2subunit
+rm -f %{buildroot}*/usr/lib/perl5/5.20.0/x86_64-linux/perllocal.pod
+rm -f %{buildroot}*/usr/bin/subunit-1to2
+rm -f %{buildroot}*/usr/bin/subunit2csv
+rm -f %{buildroot}*/usr/bin/subunit2gtk
+rm -f %{buildroot}*/usr/bin/subunit2junitxml
+rm -f %{buildroot}*/usr/bin/subunit2pyunit
+rm -f %{buildroot}*/usr/bin/subunit-2to1
+rm -f %{buildroot}*/usr/bin/subunit-filter
+rm -f %{buildroot}*/usr/bin/subunit-ls
+rm -f %{buildroot}*/usr/bin/subunit-notify
+rm -f %{buildroot}*/usr/bin/subunit-output
+rm -f %{buildroot}*/usr/bin/subunit-stats
+rm -f %{buildroot}*/usr/bin/subunit-tags
+rm -f %{buildroot}*/usr/bin/tap2subunit
 ## install_append content
 rm -rfv %{buildroot}/usr/lib/python3*/site-packages/subunit
 ## install_append end
