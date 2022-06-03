@@ -4,7 +4,7 @@
 #
 Name     : subunit
 Version  : 1.4.0
-Release  : 77
+Release  : 78
 URL      : https://github.com/testing-cabal/subunit/archive/1.4.0/subunit-1.4.0.tar.gz
 Source0  : https://github.com/testing-cabal/subunit/archive/1.4.0/subunit-1.4.0.tar.gz
 Summary  : Subunit test protocol library.
@@ -88,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641855588
+export SOURCE_DATE_EPOCH=1654298548
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -98,7 +98,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  INSTALLDIRS=vendor
 
 %install
-export SOURCE_DATE_EPOCH=1641855588
+export SOURCE_DATE_EPOCH=1654298548
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/subunit
 cp %{_builddir}/subunit-1.4.0/Apache-2.0 %{buildroot}/usr/share/package-licenses/subunit/2b8b815229aa8a61e483fb4ba0588b8b6c491890
@@ -154,6 +154,4 @@ rm -rfv %{buildroot}/usr/lib/python3*/site-packages/subunit
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Subunit.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Subunit/Diff.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Subunit/.packlist
+/usr/lib/perl5/*
